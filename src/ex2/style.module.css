@@ -1,0 +1,26 @@
+.button{
+    background-color: blue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.red{
+    color: white;
+    background-color: red;
+}
+.sil{
+    color: white;
+    background-color: silver;
+}
+.black{
+    color: white;
+    background-color: black;
+}
+.steel{
+    color: white;
+    background-color: steelblue;
+}
+.active{
+    border: 2px solid black;
+}
