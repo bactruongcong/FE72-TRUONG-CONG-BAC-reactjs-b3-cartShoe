@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import BaitapState from './baitapState/baitapState';
+import Home from './baiTapgiohang/Home';
 
 function App() {
   return (
     <div className="App">
-      <BaitapState />
+      <Home />
     </div>
   );
 }
