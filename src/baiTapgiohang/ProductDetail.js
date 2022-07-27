@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class ProductDetail extends Component {
     render() {
-        const {name, price, description, quantity, image } = this.props.selectedProduct;
+        // const {name, price, description, quantity, image } = this.props.selectedProduct;
+        const {name, price, description, quantity, image } = this.props.product;
         return (
             <div>
               <div className='row'>
