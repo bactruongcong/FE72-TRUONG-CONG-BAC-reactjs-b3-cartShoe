@@ -127,11 +127,11 @@ class Home extends Component {
             "image": "http://svcy3.myclass.vn/images/nike-air-max-270-react.png"
           } 
     ];
-    // selectProduct = (prodFromItem) => {
-    //     this.setState({
-    //         selectedProduct: prodFromItem,
-    //     });
-    // }
+    selectProduct = (prodFromItem) => {
+        this.setState({
+            selectedProduct: prodFromItem,
+        });
+    }
     addTocartProduct = (propProduct) => {
         //spread operator 
         const cloneCart = [...this.state.cart];
@@ -173,7 +173,7 @@ class Home extends Component {
       })
     }
     state = {
-        selectedProduct: null,
+        selectedProduct: {},
         cart: [],
     }
     render() {
@@ -185,8 +185,9 @@ class Home extends Component {
                 <button className={Styles.buttoncart} data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="fa-solid fa-cart-shopping" /></button>
               </div>
                 <ProductList propProduct = {this.product} selectProduct = {this.selectProduct} addTocartProduct = {this.addTocartProduct}/>
-                {/* {this.state.selectedProduct && <ProductDetail selectedProduct={this.state.selectedProduct}/>} */}
+                {this.state.selectedProduct && <ProductDetail selectedProduct={this.state.selectedProduct}/>}
                 <Cart propProduct = {this.state.cart} deleteToCartItem = {this.deleteToCartItem} clearCart = {this.clearCart}/>
+                
             </div>
 
 
