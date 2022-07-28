@@ -17,9 +17,9 @@ class Cart extends Component {
                                     <img src={item.product.image} style={{width: 50}}/>
                                 </td>
                                 <td>
-                                    <button className='btn btn-info'>-</button>
+                                    <button className='btn btn-info' onClick={ () => this.props.downVolume(item.product.id)}>-</button>
                                     <span>{item.volume}</span>
-                                    <button className='btn btn-info'>+</button>
+                                    <button className='btn btn-info' onClick={ () => this.props.upVolume(item.product.id)}>+</button>
                                 </td>
                                 <td>
                                     {item.product.price}

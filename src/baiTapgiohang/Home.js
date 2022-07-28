@@ -152,7 +152,7 @@ class Home extends Component {
           cart: cloneCart,
         },
         () =>{
-          console.log(this.state.cart);
+          // console.log(this.state.cart);
         }
         );
     }
@@ -176,6 +176,33 @@ class Home extends Component {
         selectedProduct: {},
         cart: [],
     }
+    upVolume = (id) =>{
+    //spread operator 
+    const cloneCart = [...this.state.cart];
+    const foundItem = cloneCart.find( (item)=> {
+      return item.product.id === id;
+    })
+    foundItem.volume += 1;
+    this.setState({
+      cart: cloneCart,
+    })
+    }
+    downVolume = (id) =>{
+      //spread operator 
+      const cloneCart = [...this.state.cart];
+      const foundItem = cloneCart.find( (item)=> {
+        return item.product.id === id;
+      })
+      foundItem.volume -= 1;
+      if(foundItem.volume === 0){
+        this.deleteToCartItem(id);
+      }else{
+        this.setState({
+          cart: cloneCart,
+        })
+      }
+      
+      }
     render() {
         return (
             <div className='container'>
@@ -186,7 +213,7 @@ class Home extends Component {
               </div>
                 <ProductList propProduct = {this.product} selectProduct = {this.selectProduct} addTocartProduct = {this.addTocartProduct}/>
                 {this.state.selectedProduct && <ProductDetail selectedProduct={this.state.selectedProduct}/>}
-                <Cart propProduct = {this.state.cart} deleteToCartItem = {this.deleteToCartItem} clearCart = {this.clearCart}/>
+                <Cart propProduct = {this.state.cart} deleteToCartItem = {this.deleteToCartItem} clearCart = {this.clearCart} upVolume = {this.upVolume} downVolume = {this.downVolume}/>
                 
             </div>
 
