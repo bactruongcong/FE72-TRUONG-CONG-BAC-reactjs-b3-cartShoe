@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Styles from "./style.module.css"
 class ProductDetail extends Component {
     render() {
         const {name, price, description, quantity, image } = this.props.selectedProduct;
@@ -11,29 +11,26 @@ class ProductDetail extends Component {
             <div className="modal-dialog" role="document">
             <div className="modal-content">
                 <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+                <h5 className="modal-title" id="exampleModalLabel">Chi tiết sản phẩm</h5>
                 </div>
                 <div className="modal-body">
                 <div className='row'>
                 <div className='col-4'>
-                    <h1 className='display-4'>{name}</h1>
                     <img src={image} className='w-100' />
+                    <span className={Styles.detailName}>{name}</span>
                 </div>
-                <div className='col-8'>
-                    <h1>Thông tin sản phẩm</h1>
-                    <p>Tên: {name}</p>
-                    <p>Giá: {price}</p>
+                <div className={`${Styles.detailProduct} col-8`}>
+                    <h5>Thông tin sản phẩm</h5>
+                    <p className={Styles.detailName}>Tên: {name}</p>
+                    <p className={Styles.priceDetail}>Giá: {price}</p>
                     <p>Chi tiết: {description}</p>
                     <p>Số lượng: {quantity}</p>
                     </div>
                 </div>
                 </div>
                 <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+             
                 </div>
             </div>
             </div>

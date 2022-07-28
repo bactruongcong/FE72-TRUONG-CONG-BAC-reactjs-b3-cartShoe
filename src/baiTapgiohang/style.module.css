@@ -27,3 +27,17 @@
     right: -10px;
     background-color: red;
 }
+.detailProduct{
+    text-align: left;
+}
+.detailProduct h5{
+    font-weight: bold;
+}
+.detailName{
+    font-size: 15px;
+    font-weight: bold;
+    color: crimson;
+}
+.priceDetail{
+    color: red;
+}
